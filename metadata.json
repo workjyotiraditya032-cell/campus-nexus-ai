@@ -1,0 +1,6 @@
+{
+  "name": "Campus Nexus AI",
+  "description": "Centralized, AI-powered university ecosystem platform for student profiles, resume building, Lost & Found intelligence with similarity matching, career opportunities, and admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
