@@ -65,7 +65,7 @@ const notifications: Notification[] = [];
 const conversations: Conversation[] = [];
 const adminLogs: AdminLog[] = [];
 const suspendedUserIds: Set<string> = new Set();
-
+console.log("=== BUILD VERSION JYOTI TEST ===");
 // --- LAZY GEMINI CLIENT ---
 let aiClient: GoogleGenAI | null = null;
 function getGeminiClient(): GoogleGenAI | null {
