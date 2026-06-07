@@ -84,6 +84,33 @@ function getGeminiClient(): GoogleGenAI | null {
   }
   return aiClient;
 }
+app.post("/api/test-n8n", async (req, res) => {
+  try {
+    const response = await fetch(
+      "https://kinswoman-clamp-disinfect.ngrok-free.dev/webhook/internship-alert",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req.body),
+      }
+    );
+
+    const data = await response.text();
+
+    res.json({
+      success: true,
+      data,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      error: "Failed to call n8n",
+    });
+  }
+});
 
 // Helper to push admin log
 function logAdminAction(adminId: string, action: string, details: string) {
