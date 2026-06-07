@@ -112,6 +112,14 @@ app.post("/api/test-n8n", async (req, res) => {
     });
   }
 });
+app.get("/api/ping", (req, res) => {
+  console.log("PING ROUTE HIT");
+
+  res.json({
+    message: "PING WORKING",
+    time: new Date()
+  });
+});
 // Helper to push admin log
 function logAdminAction(adminId: string, action: string, details: string) {
   const admin = users.find(u => u.id === adminId);
