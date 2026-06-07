@@ -30,7 +30,7 @@ import {
 
 dotenv.config();
 console.log("Current Directory:", process.cwd());
-console.log("GROQ:", process.env.GROQ_API_KEY);
+console.log("GROQ KEY EXISTS:", !!process.env.GROQ_API_KEY);
 const app = express();
 const PORT = 3000;
 console.log("GROQ KEY EXISTS:", !!process.env.GROQ_API_KEY);
