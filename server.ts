@@ -110,7 +110,13 @@ app.post("/api/test-n8n", async (req, res) => {
       error: "Failed to call n8n",
     });
   }
-});
+app.get("/api/ping", (req, res) => {
+  res.json({
+    message: "PING WORKING",
+    time: new Date()
+  });
+});});
+
 
 // Helper to push admin log
 function logAdminAction(adminId: string, action: string, details: string) {
