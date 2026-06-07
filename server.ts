@@ -65,7 +65,15 @@ const notifications: Notification[] = [];
 const conversations: Conversation[] = [];
 const adminLogs: AdminLog[] = [];
 const suspendedUserIds: Set<string> = new Set();
-console.log("=== BUILD VERSION JYOTI TEST ===");
+app.get("/api/ping", (req, res) => {
+  console.log("PING ROUTE HIT");
+
+  res.json({
+    message: "PING WORKING",
+    time: new Date(),
+  });
+});
+
 // --- LAZY GEMINI CLIENT ---
 let aiClient: GoogleGenAI | null = null;
 function getGeminiClient(): GoogleGenAI | null {
