@@ -65,14 +65,7 @@ const notifications: Notification[] = [];
 const conversations: Conversation[] = [];
 const adminLogs: AdminLog[] = [];
 const suspendedUserIds: Set<string> = new Set();
-app.get("/api/ping", (req, res) => {
-  console.log("PING ROUTE HIT");
 
-  res.json({
-    message: "PING WORKING",
-    time: new Date(),
-  });
-});
 
 // --- LAZY GEMINI CLIENT ---
 let aiClient: GoogleGenAI | null = null;
@@ -118,14 +111,7 @@ app.post("/api/test-n8n", async (req, res) => {
       error: "Failed to call n8n",
     });
   }
-app.get("/api/ping", (req, res) => {
-  res.json({
-    message: "PING WORKING",
-    time: new Date()
-  });
-});});
-
-
+});
 // Helper to push admin log
 function logAdminAction(adminId: string, action: string, details: string) {
   const admin = users.find(u => u.id === adminId);
